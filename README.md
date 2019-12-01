@@ -1,9 +1,9 @@
 # Microprocessor-Lab
-Microprocessor Lab projects (Atmega16, C language)
+Microprocessor Lab projects (Atmega16, C programming language)
 
 This repository contains projects of my Microprocessor Labaratory
 
-master: @MLaali
+master: [@MLaali](https://github.com/MLaali)
 
 # Projects
 
