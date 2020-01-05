@@ -5,7 +5,7 @@ const int SENSOR_PINS[SENSORS_COUNT] = {A0, A1, A2, A3, A4};
 
 const int MAX_SPEED = 255;
 const int NORMAL_SPEED = 205;
-const int MIN_SPEED = 100;
+const int MIN_SPEED = 0;
 
 const int LEFT_IN1 = 6;
 const int LEFT_IN2 = 7;
@@ -15,11 +15,11 @@ const int RIGHT_IN1 = 8;
 const int RIGHT_IN2 = 9;
 const int RIGHT_EN = 10;
 
-const float KP = 25;
+const float KP = 90;
 const float KI = 0;
-const float KD = 0;
+const float KD = 10;
 
-const bool DEBUG = true;
+const bool DEBUG = false;
 const int DELAY_TIME = 1000;
 
 // ==============================================  /////////////////
@@ -52,5 +52,7 @@ void loop() {
     Serial.println(speed_difference);
     Serial.println("--------------------------------------");
     
-    if(DEBUG) delay(DELAY_TIME);
+    if(DEBUG) {
+      delay(DELAY_TIME);
+    }
 }
