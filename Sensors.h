@@ -6,18 +6,16 @@ class Sensors {
     int threshold;
     int sensors_count;
     int *sensor_pins;
-    int line_position;
 
-    Sensors (int threshold, int sensors_count, int sensor_pins) {
+    Sensors (int threshold, int sensors_count, int *sensor_pins) {
         this->threshold = threshold;
-        this->sensors_count = sensors_count;
         this->sensor_pins = sensor_pins;
+        this->sensors_count = sensors_count;
     }
 
     int calculate_error() {
         int error;
-        calculate_line_position();
-        switch (line_position) {
+        switch (get_line_position()) {
             case 0b00001: error =  4; break;
             case 0b00011: error =  3; break;
             case 0b00010: error =  2; break;
@@ -37,13 +35,14 @@ class Sensors {
         return sensor_value < THRESHOLD;
     }
 
-    void calculate_line_position() {
-        line_position = 0;
+    int get_line_position() {
+        int line_position = 0;
          for(int i = 0; i < sensors_count; i++) {
             if(on_line(sensor_pins[i])) {
                 line_position += (1 << i);
             }
         }
+        return line_position;
     }
     
 };
