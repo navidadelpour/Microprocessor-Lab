@@ -1,5 +1,3 @@
-// #include <Arduino.h>
-
 class Sensors {
     public:
 
@@ -16,6 +14,7 @@ class Sensors {
     int calculate_error() {
         int error;
         switch (get_line_position()) {
+            case 0b00111: error =  5; break;
             case 0b00001: error =  4; break;
             case 0b00011: error =  3; break;
             case 0b00010: error =  2; break;
@@ -25,6 +24,7 @@ class Sensors {
             case 0b01000: error = -2; break;
             case 0b11000: error = -3; break;
             case 0b10000: error = -4; break;
+            case 0b11100: error = -5; break;
             default:      error =  0; break;
         }
         return error;
