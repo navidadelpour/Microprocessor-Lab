@@ -15,9 +15,9 @@ const int RIGHT_IN1 = 8;
 const int RIGHT_IN2 = 9;
 const int RIGHT_EN = 10;
 
-const float KP = 90;
+const float KP = 80;
 const float KI = 0;
-const float KD = 10;
+const float KD = 50;
 
 const bool DEBUG = false;
 const int DELAY_TIME = 1000;
