@@ -75,20 +75,20 @@ class Motors {
         int left_speed = normal_speed + speed_difference;
         int right_speed = normal_speed - speed_difference;
 
-        if(!debug) {
-            set_motor(LEFT, get_direction(left_speed), normalize_speed(left_speed));
-            set_motor(RIGHT, get_direction(right_speed), normalize_speed(right_speed));
+        set_motor(LEFT, get_direction(left_speed), normalize_speed(left_speed));
+        set_motor(RIGHT, get_direction(right_speed), normalize_speed(right_speed));
+
+        if(debug) {
+            Serial.print("left_speed: ");
+            Serial.print(normalize_speed(left_speed));
+            Serial.print(" - ");
+            Serial.println(get_direction(left_speed) == FORWARD ? "F" : "B");
+
+            Serial.print("right_speed: ");
+            Serial.print(normalize_speed(right_speed));
+            Serial.print(" - ");
+            Serial.println(get_direction(right_speed) == FORWARD ? "F" : "B");
         }
-
-        Serial.print("left_speed: ");
-        Serial.print(normalize_speed(left_speed));
-        Serial.print(" - ");
-        Serial.println(get_direction(left_speed) == FORWARD ? "F" : "B");
-
-        Serial.print("right_speed: ");
-        Serial.print(normalize_speed(right_speed));
-        Serial.print(" - ");
-        Serial.println(get_direction(right_speed) == FORWARD ? "F" : "B");
     }
 
 };

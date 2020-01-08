@@ -47,13 +47,12 @@ void loop() {
     int speed_difference = pid.calculate_speed_difference(error);
     motors.drive(speed_difference, DEBUG);
 
-    Serial.print("error: ");
-    Serial.println(error);
-    Serial.print("speed_difference: ");
-    Serial.println(speed_difference);
-    Serial.println("--------------------------------------");
-    
     if(DEBUG) {
-      delay(DELAY_TIME);
+        Serial.print("error: ");
+        Serial.println(error);
+        Serial.print("speed_difference: ");
+        Serial.println(speed_difference);
+        Serial.println("--------------------------------------");
+        delay(DELAY_TIME);
     }
 }

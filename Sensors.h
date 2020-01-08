@@ -46,7 +46,7 @@ class Sensors {
 
     bool on_line(int sensor_pin) {
         int sensor_value = analogRead(sensor_pin);
-        return sensor_value < THRESHOLD;
+        return sensor_value < threshold;
     }
 
     int get_line_position() {
