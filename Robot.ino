@@ -2,6 +2,7 @@
 const int THRESHOLD = 512;
 const int SENSORS_COUNT = 5;
 const int SENSOR_PINS[SENSORS_COUNT] = {A0, A1, A2, A3, A4};
+const int ERRORS[4] = {0, 1, 2, 3};
 
 const int MAX_SPEED = 255;
 const int NORMAL_SPEED = 205;
@@ -28,7 +29,7 @@ const int DELAY_TIME = 1000;
 #include "Motors.h"
 #include "PID.h"
 
-Sensors sensors(THRESHOLD, SENSORS_COUNT, SENSOR_PINS);
+Sensors sensors(THRESHOLD, SENSORS_COUNT, SENSOR_PINS, ERRORS);
 Motors motors(
     NORMAL_SPEED, MIN_SPEED, MAX_SPEED,
     LEFT_IN1, LEFT_IN2, LEFT_EN,
